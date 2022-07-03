@@ -7,7 +7,11 @@ set showcmd      "底部显示当前键入指令
 set mouse=a      "所有模式支持鼠标
 set helplang=cn  "帮助文档中文（需要下载）
 
-" 设置以fileencodings中的编码方式读取文件,添加了cp936默认无
+filetype plugin indent on
+set smartindent
+set tabstop=4
+set shiftwidth=4
+
 set fileencodings=usc-bom,utf-8,cp936,latin1,default
 
 " 命令模式下，底部操作指令按下 Tab 键自动补全。
@@ -77,10 +81,8 @@ inoremap jk <ESC>
 
 """""""配色方案"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"set background=dark
-"colorscheme solarized
-"colorscheme molokai
-"colorscheme phd
+set background=dark
+colorscheme gruvbox
 
 """""""配色方案end"""""""""""""""""""""""""""""""""""""""""""""""
 

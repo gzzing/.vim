@@ -1,3 +1,3 @@
-[submodule "pack/vendor/start/vim-one"]
-	path = pack/vendor/start/vim-one
-	url = https://github.com/rakr/vim-one.git
+[submodule "pack/vendor/opt/gruvbox"]
+	path = pack/vendor/opt/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
