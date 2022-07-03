@@ -1,0 +1,3 @@
+[submodule "pack/vendor/start/vim-one"]
+	path = pack/vendor/start/vim-one
+	url = https://github.com/rakr/vim-one.git
