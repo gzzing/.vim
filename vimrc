@@ -38,6 +38,17 @@ set undodir     =$HOME/.vim/files/undo/
 " viminfo 文件
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 
+"设置不同模式下光标样式
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' |
+    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
 
 """""""基础设置end""""""""""""""""""""""""""""""""""""""""""""""
 
