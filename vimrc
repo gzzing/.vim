@@ -85,7 +85,7 @@ set background=dark
 set termguicolors "此项不设置颜色不正
 let g:one_allow_italics=1
 "let g:gruvbox_italic=1
-"let g:airline_theme='gruvbox'
+let g:airline_theme='bubblegum'
 colorscheme one
 
 """""""配色方案end"""""""""""""""""""""""""""""""""""""""""""""""
