@@ -24,7 +24,7 @@ if !isdirectory($HOME.'/.vim/files') && exists('*mkdir')
   call mkdir($HOME.'/.vim/files')
 endif
 
-" 备份文件
+" 备份文件 https://github.com/wsdjeg/vim-galore-zh_cn
 set backup
 set backupdir   =$HOME/.vim/files/backup/
 set backupext   =-vimbackup
@@ -38,17 +38,15 @@ set undodir     =$HOME/.vim/files/undo/
 " viminfo 文件
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 
-"设置不同模式下光标样式
-if has("autocmd")
-  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
-  au InsertEnter,InsertChange *
-    \ if v:insertmode == 'i' |
-    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
-    \ elseif v:insertmode == 'r' |
-    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
-    \ endif
-  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-endif
+"设置不同模式下光标样式 https://www.itranslater.com/qa/details/2133845720217158656
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
 
 """""""基础设置end""""""""""""""""""""""""""""""""""""""""""""""
 
