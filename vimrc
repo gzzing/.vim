@@ -17,7 +17,7 @@ set fileencodings=usc-bom,utf-8,cp936,latin1,default
 " 命令模式下，底部操作指令按下 Tab 键自动补全。
 set wildmenu
 " 第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
-set wildmode=longest:list,full
+set wildmode=longest,list,full
 
 " 如果文件夹不存在，则新建文件夹
 if !isdirectory($HOME.'/.vim/files') && exists('*mkdir')
@@ -72,7 +72,7 @@ endfunc
 
 """""""键盘映射"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-inoremap jk <ESC>
+"inoremap jk <ESC> "此项不再设置，alt+hjkl均可esc，<C-[>也可
 
 """""""键盘映射end""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -82,7 +82,11 @@ inoremap jk <ESC>
 """""""配色方案"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set background=dark
-colorscheme gruvbox
+set termguicolors "此项不设置颜色不正
+let g:one_allow_italics=1
+"let g:gruvbox_italic=1
+"let g:airline_theme='gruvbox'
+colorscheme one
 
 """""""配色方案end"""""""""""""""""""""""""""""""""""""""""""""""
 
