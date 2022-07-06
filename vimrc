@@ -42,12 +42,6 @@ set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-" optional reset cursor on start:
-"augroup myCmds
-"au!
-"autocmd VimEnter * silent !echo -ne "\e[2 q"
-"augroup END
-
 """""""基础设置end""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -82,7 +76,13 @@ endfunc
 """""""键盘映射"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "inoremap jk <ESC> "此项不再设置，alt+hjkl均可esc，<C-[>也可
-
+nnoremap j gj
+nnoremap k gk
+nnoremap <c-j> <c-w>-
+nnoremap <c-k> <c-w>+
+nnoremap <c-h> <c-w><
+nnoremap <c-l> <c-w>>
+inoremap <c-s> <ESC>:w<CR>
 """""""键盘映射end""""""""""""""""""""""""""""""""""""""""""""""""
 
 
