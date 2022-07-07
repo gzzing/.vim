@@ -78,11 +78,19 @@ endfunc
 "inoremap jk <ESC> "此项不再设置，alt+hjkl均可esc，<C-[>也可
 nnoremap j gj
 nnoremap k gk
+
 nnoremap <c-j> <c-w>-
 nnoremap <c-k> <c-w>+
 nnoremap <c-h> <c-w><
 nnoremap <c-l> <c-w>>
-inoremap <c-s> <ESC>:w<CR>
+
+inoremap <c-s> <ESC>:w<CR> "插入模式下保存
+inoremap <c-s><c-s> <ESC>:wq<CR> "插入模式下保存退出
+inoremap <c-q> <ESC>:q!<CR> "插入模式下不保存强制退出
+nnoremap <c-s> :w<CR> "正常模式下保存
+"nnoremap <c-s><c-s> :x<CR> "正常模式下保存退出,ZZ
+nnoremap ZV :q!<CR> "正常模式下不保存强制退出ZQ
+
 """""""键盘映射end""""""""""""""""""""""""""""""""""""""""""""""""
 
 
