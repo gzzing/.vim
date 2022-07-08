@@ -1,3 +1,44 @@
+"""""""键盘映射"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let mapleader = "\<space>" "将前缀键设置为空格
+
+"inoremap jk <ESC> "此项不再设置，alt+hjkl均可esc，<C-[>也可
+nnoremap j gj
+nnoremap k gk
+
+nnoremap <c-j> <c-w>-
+nnoremap <c-k> <c-w>+
+nnoremap <c-h> <c-w><
+nnoremap <c-l> <c-w>>
+
+inoremap <c-s> <ESC>:w<CR> "插入模式下保存
+inoremap <c-s><c-s> <ESC>:wq<CR> "插入模式下保存退出
+inoremap <c-q> <ESC>:q!<CR> "插入模式下不保存强制退出
+nnoremap <c-s> :w<CR> "正常模式下保存
+"nnoremap <c-s><c-s> :x<CR> "正常模式下保存退出,ZZ
+nnoremap ZV :q!<CR> "正常模式下不保存强制退出,ZQ
+
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
+
+
+"""""""键盘映射end""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+"""""""配色方案"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set background=dark
+set termguicolors "此项不设置颜色不正
+let g:one_allow_italics=1
+"let g:gruvbox_italic=1
+let g:airline_theme='bubblegum'
+colorscheme one
+
+"""""""配色方案end"""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
 """"""基础设置""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible "关闭兼容模式
@@ -19,7 +60,7 @@ set wildmenu
 " 第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
 set wildmode=longest,list,full
 
-" 如果文件夹不存在，则新建文件夹
+" 统一自动生成的临时文件位置，如果文件夹不存在，则新建文件夹
 if !isdirectory($HOME.'/.vim/files') && exists('*mkdir')
   call mkdir($HOME.'/.vim/files')
 endif
@@ -71,39 +112,4 @@ endfunc
 """""""搜索设置end""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-
-
-"""""""键盘映射"""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"inoremap jk <ESC> "此项不再设置，alt+hjkl均可esc，<C-[>也可
-nnoremap j gj
-nnoremap k gk
-
-nnoremap <c-j> <c-w>-
-nnoremap <c-k> <c-w>+
-nnoremap <c-h> <c-w><
-nnoremap <c-l> <c-w>>
-
-inoremap <c-s> <ESC>:w<CR> "插入模式下保存
-inoremap <c-s><c-s> <ESC>:wq<CR> "插入模式下保存退出
-inoremap <c-q> <ESC>:q!<CR> "插入模式下不保存强制退出
-nnoremap <c-s> :w<CR> "正常模式下保存
-"nnoremap <c-s><c-s> :x<CR> "正常模式下保存退出,ZZ
-nnoremap ZV :q!<CR> "正常模式下不保存强制退出ZQ
-
-"""""""键盘映射end""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
-"""""""配色方案"""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set background=dark
-set termguicolors "此项不设置颜色不正
-let g:one_allow_italics=1
-"let g:gruvbox_italic=1
-let g:airline_theme='bubblegum'
-colorscheme one
-
-"""""""配色方案end"""""""""""""""""""""""""""""""""""""""""""""""
 
