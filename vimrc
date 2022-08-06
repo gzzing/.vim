@@ -47,6 +47,7 @@ set laststatus=2 "总是显示状态栏
 set showcmd      "底部显示当前键入指令
 set mouse=a      "所有模式支持鼠标
 set helplang=cn  "帮助文档中文（需要下载）
+set cursorline   "当前行显示cursorline
 
 filetype plugin indent on
 set smartindent
